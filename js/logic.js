@@ -25,47 +25,57 @@ function getRes(){
 		cardtext1.setAttribute('class','card-text');
 		cardtext1.innerHTML = "Brand: "+bookList[i].brand;
 	
-	const link = document.createElement('p');
-	link.setAttribute('class','card-link');
-	link.innerHTML="Quantity: "+bookList[i].quantity;
+		const link = document.createElement('p');
+		link.setAttribute('class','card-link');
+		link.innerHTML="Quantity: "+bookList[i].quantity;
 	
-	const cardtext2 = document.createElement('p');
+		const cardtext2 = document.createElement('p');
 		cardtext2.setAttribute('class','card-text');
 		cardtext2.innerHTML = "Price "+bookList[i].price;
-	const cardtext3 = document.createElement('p');
+		
+		const cardtext3 = document.createElement('p');
 		cardtext3.setAttribute('class','card-text');
 		cardtext3.innerHTML = "Status: "+bookList[i].status;
 	
 	
-	cardbody.appendChild(cardtext1);
+		cardbody.appendChild(cardtext1);
 	
-	cardbody.appendChild(link);
+		cardbody.appendChild(link);
 	
-	cardbody.appendChild(cardtext3);
-	cardbody.appendChild(cardtext2);
+		cardbody.appendChild(cardtext3);
+		cardbody.appendChild(cardtext2);
 	
 	
-	card.appendChild(title);
-	card.appendChild(cardbody);
-	card.addEventListener('click',() => {
+		card.appendChild(title);
+		card.appendChild(cardbody);
+		card.addEventListener('click',() => {
 		cardbody.classList.toggle("showit");
 	});	
-	container.appendChild(card);
-		
+	container.appendChild(card);	
 	}
 	
 }
 
 
 function addBook(){
-	const name = document.getElementById('bookname').value;
-	const brand = document.getElementById('brandname').value;
-	const quantity = document.getElementById('quantity').value;
-	const status = document.getElementById('status').value;
-	const price = document.getElementById('price').value;
+	const idname = document.getElementById('bookname');
+	const name = idname.value;
+	const idbrand = document.getElementById('brandname');
+	const brand = idbrand.value;
+	const idquantity = document.getElementById('quantity');
+	const quantity = idquantity.value;
+	const idstatus = document.getElementById('status');
+	const status = idstatus.value;
+	const idprice = document.getElementById('price');
+	const price = idprice.value;
+	
 	console.log({'name':name,'brand':brand, 'quantity':quantity, 'status':status, 'price':price});
 	console.log(bookList);
 	bookList.push({'name':name,'brand':brand, 'quantity':quantity, 'status':status, 'price':price});
 	console.log(bookList);
+	alert("product Added");
+	const idform = document.getElementById('productform');
+	idform.reset();
+	
 	
 }
