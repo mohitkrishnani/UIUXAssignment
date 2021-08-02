@@ -8,6 +8,7 @@ console.log(bookList)
 
 function getRes(){
 	console.log(bookList);
+	//Using Dummy data to show the list view
 	for(let i = 0;i<bookList.length;i++){
 		const container = document.getElementById("card-container");
 		const card = document.createElement('div');
